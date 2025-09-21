@@ -25,3 +25,53 @@ for i in range (4):
         label = Label(master=frame, text=nums[i][j], bg= "white")
         label.pack(padx=3, pady=3)
 root.mainloop()
+
+
+
+Task2:
+
+
+
+from tkinter import *
+
+root = Tk()
+root.title("calculator")
+root.geometry("400x400")
+
+frame = Frame(master=root, height=200, width=360, bg="white")
+
+# widgets 
+lbl1 = Label(frame, text="full name", bg="black", fg="white", width=12)
+lbl2 = Label(frame, text="email id", bg="black", fg="white", width=12)
+lbl3 = Label(frame, text="password", bg="black", fg="white", width=12)
+
+name_entry = Entry(frame)
+email_entry = Entry(frame)
+password_entry = Entry(frame, show="*")
+
+def display():
+    name = name_entry.get()
+    greet = "Hello " + name
+    message = " Congratulations! Your account has been created."
+    textbox.insert(END, greet)
+    textbox.insert(END, message)
+
+textbox = Text(frame, bg="blue", fg="black")
+
+btn = Button(frame, text="Create Account", command=display, bg="red")
+
+frame.place(x=20, y=0)
+
+lbl1.place(x=20, y=20)
+name_entry.place(x=150, y=20)
+
+lbl2.place(x=20, y=80)
+email_entry.place(x=150, y=80)
+
+lbl3.place(x=20, y=140)
+password_entry.place(x=150, y=140)
+
+btn.place(x=120, y=210)
+textbox.place(x=20, y=250)
+
+root.mainloop()
